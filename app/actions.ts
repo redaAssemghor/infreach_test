@@ -9,10 +9,7 @@ export const signUpAction = async (formData: FormData) => {
   const email = formData.get("email")?.toString();
   const password = formData.get("password")?.toString();
   const supabase = createClient();
-  const origin =
-    process.env.NODE_ENV === "production"
-      ? "https://infreach-test.vercel.app"
-      : headers().get("origin");
+  const origin = "https://infreach-test.vercel.app";
 
   if (!email || !password) {
     return { error: "Email and password are required" };
@@ -65,10 +62,7 @@ export const signOutAction = async () => {
 export const resetPasswordAction = async (formData: FormData) => {
   const email = formData.get("email")?.toString();
   const supabase = createClient();
-  const origin =
-    process.env.NODE_ENV === "production"
-      ? "https://infreach-test.vercel.app"
-      : headers().get("origin");
+  const origin = "https://infreach-test.vercel.app";
   console.log(`Redirect URL: ${origin}/reset_password_callback`);
 
   if (!email) {
