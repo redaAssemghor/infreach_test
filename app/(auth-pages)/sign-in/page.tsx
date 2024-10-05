@@ -32,6 +32,11 @@ export default function Login({ searchParams }: { searchParams: Message }) {
         </SubmitButton>
         <FormMessage message={searchParams} />
       </div>
+      <Link href={"/password_recovery"}>
+        <h1 className="text-sm text-foreground items-start">
+          Forgot your Password?
+        </h1>
+      </Link>
     </form>
   );
 }
